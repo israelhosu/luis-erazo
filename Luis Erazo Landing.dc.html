@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAF7F2; font-family: 'Inter', sans-serif; color: #1C1C1C; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden;background:#FAF7F2;">
+
+<!-- SECTION 1: HERO / VSL -->
+<section id="hero" style="background:#1C1C1C;padding:64px 24px 72px;text-align:center;">
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,46px);line-height:1.15;color:#FAF7F2;margin:0 0 18px;font-weight:700;max-width:800px;margin-left:auto;margin-right:auto;">Protect the People Who Depend on You.</h1>
+  <p style="font-size:17px;line-height:1.6;color:#C9C6C0;margin:0 auto 40px;max-width:600px;">Life insurance doesn't have to be confusing, expensive, or high-pressure. Get personalized guidance from someone who actually takes the time to explain your options.</p>
+  <a href="#video" style="display:block;max-width:760px;margin:0 auto 32px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.5);" style-hover="transform:scale(1.01);">
+    <div style="position:relative;aspect-ratio:16/9;background:#000;">
+      <img src="uploads/vsl-thumb-v2.png" alt="Watch Luis explain life insurance" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </a>
+  <button type="button" onClick="{{ openModal }}" style="background:{{ accentColor }};color:#fff;font-weight:600;font-size:15px;padding:16px 40px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;display:inline-block;" style-hover="filter:brightness(0.92);transform:scale(1.02);">Book Your Free Consultation</button>
+  <div style="margin-top:20px;">
+    <a href="#how-it-works" style="color:#8A8680;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid #4A4A4A;padding-bottom:2px;" style-hover="color:{{ accentColor }};border-color:{{ accentColor }};">See How It Works ↓</a>
+  </div>
+</section>
+
+<!-- SECTION 2: TRUST BAR -->
+<section style="background:#EAE3D8;padding:36px 24px;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;">
+    <div style="display:flex;align-items:center;gap:12px;justify-content:center;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A4A4A" stroke-width="1.6"><path d="M12 2 L20 5 V11 C20 17 16.5 20.5 12 22 C7.5 20.5 4 17 4 11 V5 Z"></path></svg>
+      <span style="font-size:15px;color:#1C1C1C;font-weight:500;">11 Years Licensed</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;justify-content:center;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A4A4A" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="2"></rect><line x1="8" y1="8" x2="16" y2="8"></line><line x1="8" y1="12" x2="16" y2="12"></line><line x1="8" y1="16" x2="13" y2="16"></line></svg>
+      <span style="font-size:15px;color:#1C1C1C;font-weight:500;">$40M+ in Coverage Approved</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;justify-content:center;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A4A4A" stroke-width="1.6"><circle cx="8" cy="8" r="2.6"></circle><circle cx="16" cy="8" r="2.6"></circle><path d="M3 20 C3 16 5.5 14 8 14 C10.5 14 13 16 13 20"></path><path d="M12 20 C12 16.5 14 15 16 15 C18.5 15 21 17 21 20"></path></svg>
+      <span style="font-size:15px;color:#1C1C1C;font-weight:500;">400+ Families Protected</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;justify-content:center;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A4A4A" stroke-width="1.6"><rect x="4" y="9" width="16" height="12"></rect><path d="M4 9 L12 3 L20 9"></path><line x1="9" y1="21" x2="9" y2="14"></line><line x1="15" y1="21" x2="15" y2="14"></line></svg>
+      <span style="font-size:15px;color:#1C1C1C;font-weight:500;">6 Top-Rated Insurance Carriers</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: PROBLEM AGITATION -->
+<section id="problem" style="background:#FAF7F2;padding:88px 24px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;justify-content:center;">
+  <div style="flex:1 1 480px;max-width:640px;min-width:300px;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);line-height:1.2;margin:0 0 24px;font-weight:700;">If You've Been Putting This Off, You're Not Alone.</h2>
+    <p style="font-size:17px;line-height:1.75;color:#4A4A4A;margin:0 0 18px;">You already know you should look into life insurance. But every time you start, the same things stop you — it feels too expensive, too complicated, and you're pretty sure someone's going to pressure you into buying something you don't fully understand.</p>
+    <p style="font-size:17px;line-height:1.75;color:#4A4A4A;margin:0 0 18px;">Meanwhile, the people you love are depending on your income. Your mortgage doesn't disappear. Your kids still need to eat. And a GoFundMe page was never supposed to be anyone's financial plan. The longer you wait, the more it costs — and the harder it can be to qualify. Today is the youngest and healthiest you'll ever be.</p>
+    <p style="font-size:17px;line-height:1.75;color:#1C1C1C;margin:0;font-weight:500;">Here's the truth: life insurance doesn't have to be any of those things. Not when you have the right person walking you through it.</p>
+  </div>
+  <div style="flex:1 1 300px;max-width:360px;min-width:240px;">
+    <img src="uploads/tmpxmrvji3d.webp" alt="A family together" style="width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,0.12);">
+  </div>
+</section>
+
+<!-- SECTION 5: MEET LUIS -->
+<section id="meet" style="background:#F0EDE8;padding:88px 24px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;justify-content:center;">
+  <div style="flex:1 1 320px;max-width:400px;min-width:240px;">
+    <img src="uploads/tmpaj9ngnp7.webp" alt="Luis Erazo at work" style="width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,0.12);">
+  </div>
+  <div style="flex:1 1 480px;max-width:620px;min-width:300px;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);line-height:1.25;margin:0 0 24px;font-weight:700;">I'm Luis. And I Believe Life Insurance Should Start With a Conversation — Not a Sales Pitch.</h2>
+    <p style="font-size:16px;line-height:1.75;color:#4A4A4A;margin:0 0 16px;">Eleven years ago, I started in this industry the hard way — cold prospecting in malls and grocery stores, walking up to complete strangers trying to convince them they needed life insurance. Most people wanted nothing to do with me. And honestly? I didn't blame them.</p>
+    <p style="font-size:16px;line-height:1.75;color:#4A4A4A;margin:0 0 16px;">That experience taught me something that changed everything: people don't want to be sold to. They want to be heard. They want someone who'll take the time to explain their options in plain language, help them understand what actually makes sense for their family, and never pressure them into a decision they're not ready for.</p>
+    <p style="font-size:16px;line-height:1.75;color:#4A4A4A;margin:0 0 16px;">That's exactly how I work today. I've helped over 400 families across the U.S. find coverage that fits their real situation — not a one-size-fits-all policy. I work with six of the top insurance carriers in the country, so I can compare what's available and find the best fit instead of pushing one company's products.</p>
+    <p style="font-size:16px;line-height:1.75;color:#1C1C1C;font-weight:500;margin:0 0 28px;">Every family I help is one less family that has to rely on strangers on the internet to cover a funeral.</p>
+    <button type="button" onClick="{{ openModal }}" style="background:none;border:none;padding:0;cursor:pointer;color:{{ accentColor }};font-size:16px;font-weight:600;font-family:inherit;text-decoration:none;" style-hover="text-decoration:underline;">Ready to have that conversation? → Talk With Luis</button>
+  </div>
+</section>
+
+<!-- SECTION 6: WALL OF PROTECTION -->
+<section style="background:#1C1C1C;padding:80px 0;overflow:hidden;">
+  <div style="text-align:center;padding:0 24px;margin-bottom:44px;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);color:#FAF7F2;margin:0 0 16px;font-weight:700;">The Wall of Protection</h2>
+    <p style="font-size:16px;line-height:1.7;color:#B8B4AC;max-width:640px;margin:0 auto;">Every name here is a real person who took action — and a family that now has peace of mind. They'll never have to launch a GoFundMe to cover funeral costs, because they're protected. This is their legacy — and it can be yours too.</p>
+  </div>
+  <div style="width:100%;overflow:hidden;" style-hover="">
+    <div style="display:flex;gap:16px;width:max-content;animation:marquee 45s linear infinite;" style-hover="animation-play-state:paused;">
+      <sc-for list="{{ namesLoop }}" as="n" hint-placeholder-count="32">
+        <div style="flex:0 0 auto;background:#2A2A28;border:1px solid {{ accentColor }};border-radius:10px;padding:16px 26px;min-width:150px;text-align:center;">
+          <div style="color:#FAF7F2;font-weight:700;font-size:16px;">{{ n.name }}</div>
+          <div style="color:{{ accentColor }};font-size:12px;font-weight:600;letter-spacing:0.05em;margin-top:4px;">{{ n.state }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: HOW IT WORKS -->
+<section id="how-it-works" style="background:#FAF7F2;padding:88px 24px;">
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);text-align:center;margin:0 0 56px;font-weight:700;">Here's Exactly What Happens When You Reach Out</h2>
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;">
+    <div style="background:#fff;border-radius:12px;padding:36px 28px;box-shadow:0 6px 20px rgba(0,0,0,0.06);">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="{{ accentColor }}" stroke-width="1.6"><path d="M4 4 C4 4 6 4 7 5 C8 6 7.5 8 8.5 9 C9.5 10 11 10.5 11 10.5 M4 4 C4 4 4 6 5 7 C6 8 8 7.5 9 8.5 C10 9.5 10.5 11 10.5 11 M20 20 C20 20 18 20 17 19 C16 18 16.5 16 15.5 15 C14.5 14 13 13.5 13 13.5"></path><path d="M8 8 C10 10.5 13.5 14 16 16"></path></svg>
+      <div style="font-size:13px;color:{{ accentColor }};font-weight:700;letter-spacing:0.06em;margin:18px 0 6px;">STEP 1</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 10px;">We Have a Conversation</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4A4A;margin:0;">You tell me about your situation — your family, your concerns, your goals. No 20-question forms. No automated bots. A real conversation with a real person. Most people wish they'd done this sooner.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:36px 28px;box-shadow:0 6px 20px rgba(0,0,0,0.06);">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="{{ accentColor }}" stroke-width="1.6"><rect x="4" y="4" width="7" height="16" rx="1"></rect><rect x="13" y="4" width="7" height="16" rx="1"></rect><path d="M6 9 L8 11 L10 7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 9 L17 11 L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <div style="font-size:13px;color:{{ accentColor }};font-weight:700;letter-spacing:0.06em;margin:18px 0 6px;">STEP 2</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 10px;">We Look at Your Options Together</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4A4A;margin:0;">I compare coverage from multiple carriers based on your age, health, budget, and what you're trying to protect. You'll see real numbers — not guesses.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:36px 28px;box-shadow:0 6px 20px rgba(0,0,0,0.06);">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="{{ accentColor }}" stroke-width="1.6"><path d="M12 2 L19 5 V11 C19 16.5 16 19.5 12 21 C8 19.5 5 16.5 5 11 V5 Z"></path><path d="M9 12 L11.5 14.5 L15.5 9.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <div style="font-size:13px;color:{{ accentColor }};font-weight:700;letter-spacing:0.06em;margin:18px 0 6px;">STEP 3</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 10px;">You Decide What Makes Sense</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4A4A;margin:0;">If coverage makes sense for your situation, I'll walk you through the next steps. If it doesn't, I'll tell you that too. No pressure either way.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:48px;">
+    <button type="button" onClick="{{ openModal }}" style="background:{{ accentColor }};color:#fff;font-weight:600;font-size:15px;padding:16px 40px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;display:inline-block;" style-hover="filter:brightness(0.92);transform:scale(1.02);">Start With a Conversation</button>
+  </div>
+</section>
+
+<!-- SECTION 8: COVERAGE OPTIONS -->
+<section style="background:#F0EDE8;padding:88px 24px;">
+  <div style="text-align:center;margin-bottom:12px;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);margin:0 0 16px;font-weight:700;">Coverage Options Built Around Your Life</h2>
+    <p style="font-size:16px;color:#4A4A4A;max-width:600px;margin:0 auto 48px;">Not sure which type of coverage is right for you? That's exactly what the consultation is for.</p>
+  </div>
+  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+    <div style="background:#fff;border-radius:12px;padding:30px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{ accentColor }}" stroke-width="1.6"><path d="M12 2 L19 5 V11 C19 16.5 16 19.5 12 21 C8 19.5 5 16.5 5 11 V5 Z"></path></svg>
+      <h3 style="font-size:18px;font-weight:700;margin:16px 0 8px;">Term Life Insurance</h3>
+      <p style="font-size:15px;line-height:1.6;color:#4A4A4A;margin:0;">Affordable protection for a set number of years — designed for the period when your family depends on your income most.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:30px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{ accentColor }}" stroke-width="1.6"><circle cx="8.5" cy="12" r="5"></circle><circle cx="15.5" cy="12" r="5"></circle></svg>
+      <h3 style="font-size:18px;font-weight:700;margin:16px 0 8px;">Whole Life Insurance</h3>
+      <p style="font-size:15px;line-height:1.6;color:#4A4A4A;margin:0;">Permanent coverage that never expires and builds cash value over time. Protection your family can count on for life.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:30px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{ accentColor }}" stroke-width="1.6"><path d="M4 20 L4 14 L9 14 L9 20"></path><path d="M9 20 L9 8 L14 8 L14 20"></path><path d="M14 20 L14 3 L19 3 L19 20"></path></svg>
+      <h3 style="font-size:18px;font-weight:700;margin:16px 0 8px;">Indexed Universal Life (IUL)</h3>
+      <p style="font-size:15px;line-height:1.6;color:#4A4A4A;margin:0;">Flexible permanent coverage with cash value growth potential tied to market indexes — with built-in protection against losses.</p>
+    </div>
+    
+  </div>
+  <div style="max-width:760px;margin:40px auto 0;background:#1C1C1C;border-radius:12px;padding:28px 32px;display:flex;gap:16px;align-items:flex-start;">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ accentColor }}" stroke-width="1.6" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="9" r="6"></circle><line x1="10" y1="19" x2="14" y2="19"></line><line x1="12" y1="15" x2="12" y2="19"></line></svg>
+    <div>
+      <div style="color:#FAF7F2;font-weight:700;font-size:16px;margin-bottom:6px;">Did You Know? Many Modern Policies Include Living Benefits.</div>
+      <p style="color:#C9C6C0;font-size:15px;line-height:1.65;margin:0;">That means if you're diagnosed with a qualifying terminal, critical, or chronic illness, you may be able to access a portion of your coverage while you're still alive — when you need it most.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:44px;">
+    <button type="button" onClick="{{ openModal }}" style="background:{{ accentColor }};color:#fff;font-weight:600;font-size:15px;padding:16px 40px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;display:inline-block;" style-hover="filter:brightness(0.92);transform:scale(1.02);">Let's Figure Out What Fits → Talk With Luis</button>
+  </div>
+</section>
+
+<!-- SECTION 9: CARRIER LOGOS -->
+<section style="background:#FAF7F2;padding:80px 24px;text-align:center;">
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);margin:0 0 16px;font-weight:700;">Your Options Come From Carriers You Can Trust</h2>
+  <p style="font-size:16px;color:#4A4A4A;max-width:620px;margin:0 auto 48px;">I work with six of the top-rated insurance carriers in the country — so I can shop your options and find the coverage that fits your situation, not push one company's products.</p>
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:32px;align-items:center;">
+    <sc-for list="{{ carriers }}" as="c" hint-placeholder-count="6">
+      <img src="{{ c.img }}" alt="{{ c.name }}" style="width:100%;max-height:56px;object-fit:contain;filter:grayscale(1) opacity(0.7);transition:filter 0.2s;" style-hover="filter:grayscale(0) opacity(1);">
+    </sc-for>
+  </div>
+</section>
+
+<!-- SECTION 9B: ALREADY HAVE COVERAGE -->
+<section style="background:color-mix(in srgb, {{ accentColor }} 10%, #FAF7F2);padding:72px 24px;text-align:center;">
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3.6vw,34px);margin:0 0 16px;font-weight:700;max-width:680px;margin-left:auto;margin-right:auto;">Already Have Life Insurance? It Might Be Time for a Second Look.</h2>
+  <p style="font-size:16px;line-height:1.65;color:#4A4A4A;max-width:600px;margin:0 auto 40px;">Life changes. Your coverage should keep up. If any of these sound familiar, a quick review could make a big difference:</p>
+  <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;text-align:left;">
+    <div style="background:#fff;border-radius:12px;padding:26px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+      <div style="font-weight:700;font-size:15.5px;color:#1C1C1C;margin-bottom:8px;">Your income has changed.</div>
+      <p style="font-size:14.5px;line-height:1.6;color:#4A4A4A;margin:0;">A raise, a new job, or a career shift may mean your current coverage no longer matches what your family would actually need.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:26px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+      <div style="font-weight:700;font-size:15.5px;color:#1C1C1C;margin-bottom:8px;">Your family has grown.</div>
+      <p style="font-size:14.5px;line-height:1.6;color:#4A4A4A;margin:0;">Marriage, a new baby, or taking on care for a parent changes your financial responsibilities — and what your policy needs to cover.</p>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:26px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+      <div style="font-weight:700;font-size:15.5px;color:#1C1C1C;margin-bottom:8px;">You haven't reviewed your policy in over two years.</div>
+      <p style="font-size:14.5px;line-height:1.6;color:#4A4A4A;margin:0;">Rates, products, and your own situation change. What made sense three years ago may not be the best fit today.</p>
+    </div>
+  </div>
+  <p style="font-size:16px;color:#1C1C1C;font-weight:500;max-width:520px;margin:36px auto 28px;">A review takes 15 minutes. And it's free. If your current coverage still makes sense, I'll tell you that too.</p>
+  <button type="button" onClick="{{ openModal }}" style="background:{{ accentColor }};color:#fff;font-weight:600;font-size:15px;padding:16px 40px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;display:inline-block;" style-hover="filter:brightness(0.92);transform:scale(1.02);">Review My Coverage — Talk With Luis</button>
+</section>
+
+<!-- SECTION 10: TESTIMONIALS -->
+<section style="background:#F0EDE8;padding:88px 24px;">
+  <div style="text-align:center;margin-bottom:48px;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);margin:0 0 16px;font-weight:700;">Real Families. Real Protection. Real Stories.</h2>
+    <p style="font-size:16px;color:#4A4A4A;max-width:600px;margin:0 auto;">Don't take my word for it — hear directly from families I've had the privilege of helping.</p>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+    <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="6">
+      <a href="#video" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.06);text-decoration:none;display:block;" style-hover="transform:scale(1.02);">
+        <div style="position:relative;aspect-ratio:16/9;background:#000;">
+          <img src="{{ t.img }}" alt="{{ t.name }} testimonial" style="width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);"></div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="19" viewBox="0 0 24 28"><path d="M0 0 L24 14 L0 28 Z" fill="{{ accentColor }}"></path></svg>
+          </div>
+        </div>
+        <div style="padding:16px 20px;">
+          <div style="color:{{ accentColor }};font-size:13px;letter-spacing:0.1em;margin-bottom:6px;">★★★★★</div>
+          <div style="font-weight:700;font-size:16px;color:#1C1C1C;">{{ t.name }}</div>
+          <div style="font-size:13px;color:#4A4A4A;margin-top:2px;">{{ t.state }}</div>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<!-- SECTION 11: FAQ -->
+<section style="background:#FAF7F2;padding:88px 24px;">
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);text-align:center;margin:0 0 48px;font-weight:700;">Questions People Usually Ask</h2>
+  <div style="max-width:720px;margin:0 auto;">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="8">
+      <div style="border-bottom:1px solid #E2DED6;">
+        <div onClick="{{ f.onToggle }}" style="padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;">
+          <span style="font-size:16px;font-weight:600;color:#1C1C1C;">{{ f.q }}</span>
+          <span style="font-size:22px;color:{{ accentColor }};flex-shrink:0;">{{ f.toggleLabel }}</span>
+        </div>
+        <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size:15px;line-height:1.7;color:#4A4A4A;margin:0 0 22px;padding:0 4px;">{{ f.a }}</p>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- SECTION 12: FINAL CTA -->
+<section style="background:#1C1C1C;padding:88px 24px;display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:center;">
+  <div style="flex:1 1 300px;max-width:360px;min-width:240px;">
+    <img src="uploads/L%201a.jpg" alt="Luis Erazo" style="width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.4);">
+  </div>
+  <div style="flex:1 1 420px;max-width:520px;min-width:280px;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);color:#FAF7F2;margin:0 0 20px;font-weight:700;">You Don't Have to Figure This Out Alone.</h2>
+    <p style="font-size:17px;line-height:1.65;color:#C9C6C0;margin:0 0 32px;">Let's have a real conversation about your situation. No pressure, no jargon, no obligation — just clarity on what options are available for you and the people who matter most.</p>
+    <p style="font-size:15.5px;line-height:1.6;color:#FAF7F2;font-weight:500;margin:0 0 24px;">The best time to look into this was years ago. The second best time is right now.</p>
+    <button type="button" onClick="{{ openModal }}" style="background:{{ accentColor }};color:#fff;font-weight:600;font-size:15px;padding:16px 40px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;display:inline-block;" style-hover="filter:brightness(0.92);transform:scale(1.02);">Talk With Luis</button>
+    <p style="font-size:13px;color:#8A8680;margin:20px 0 0;">Free consultation · No obligation · Serving families across the U.S.</p>
+  </div>
+</section>
+
+<!-- SECTION 13: FOOTER -->
+<footer style="background:#141414;padding:40px 24px;text-align:center;">
+  <p style="color:#B8B4AC;font-size:14px;margin:0 0 10px;">© 2026 Luis Erazo · @learnwithluiss</p>
+  <p style="color:#8A8680;font-size:13px;margin:0 0 16px;">
+    <a href="#privacy" style="color:#8A8680;text-decoration:none;" style-hover="color:{{ accentColor }};">Privacy Policy</a>
+    &nbsp;|&nbsp;
+    <a href="#terms" style="color:#8A8680;text-decoration:none;" style-hover="color:{{ accentColor }};">Terms &amp; Conditions</a>
+  </p>
+  <p style="color:#8A8680;font-size:13px;margin:0 0 20px;">Instagram · TikTok · Facebook</p>
+  <p style="color:#6A665F;font-size:11.5px;line-height:1.6;max-width:640px;margin:0 auto;">Luis Erazo is a licensed insurance professional. Policy availability, terms, and pricing vary by state, carrier, and individual circumstances. This website is not a guarantee of coverage or specific rates. Please consult directly for personalized information.</p>
+</footer>
+
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;" onClick="{{ closeModal }}">
+    <div style="background:#fff;border-radius:14px;max-width:460px;width:100%;padding:36px 32px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.3);" onClick="{{ stopClick }}">
+      <button type="button" onClick="{{ closeModal }}" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:24px;color:#8A8680;cursor:pointer;line-height:1;font-family:inherit;">×</button>
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:20px 0;">
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px;margin:0 0 12px;">Thank you, {{ formName }}.</h3>
+          <p style="font-size:15px;color:#4A4A4A;margin:0 0 24px;">Luis will be in touch soon.</p>
+          <button type="button" onClick="{{ closeModal }}" style="background:{{ accentColor }};color:#fff;font-weight:600;font-size:15px;padding:14px 32px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;">Close</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <h3 style="font-family:'Playfair Display',serif;font-size:25px;margin:0 0 10px;">Let's Start the Conversation.</h3>
+        <p style="font-size:14.5px;color:#4A4A4A;margin:0 0 24px;">Fill in a few details and Luis will reach out to you personally — usually within 24 hours.</p>
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:14px;">
+          <input required="{{ true }}" type="text" placeholder="Your full name" value="{{ formName }}" onChange="{{ onNameChange }}" style="padding:14px 16px;border:1px solid #E2DED6;border-radius:8px;font-size:15px;font-family:inherit;">
+          <input required="{{ true }}" type="email" placeholder="you@email.com" value="{{ formEmail }}" onChange="{{ onEmailChange }}" style="padding:14px 16px;border:1px solid #E2DED6;border-radius:8px;font-size:15px;font-family:inherit;">
+          <input required="{{ true }}" type="tel" pattern="[0-9()\-+ ]{7,}" placeholder="(555) 555-5555" value="{{ formPhone }}" onChange="{{ onPhoneChange }}" style="padding:14px 16px;border:1px solid #E2DED6;border-radius:8px;font-size:15px;font-family:inherit;">
+          <select required="{{ true }}" value="{{ formSituation }}" onChange="{{ onSituationChange }}" style="padding:14px 16px;border:1px solid #E2DED6;border-radius:8px;font-size:15px;font-family:inherit;color:#1C1C1C;">
+            <option value="">What best describes your situation?</option>
+            <option value="none">I don't have life insurance yet</option>
+            <option value="review">I have coverage but want to review it</option>
+            <option value="unsure">I'm not sure what I need</option>
+            <option value="family">I want coverage for my family</option>
+            <option value="business">I'm interested in business protection</option>
+          </select>
+          <button type="submit" style="background:{{ accentColor }};color:#fff;font-weight:600;font-size:15px;padding:16px 40px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;margin-top:6px;" style-hover="filter:brightness(0.92);">Talk With Luis</button>
+          <p style="font-size:12.5px;color:#8A8680;text-align:center;margin:4px 0 0;">Free · No obligation · Luis responds personally</p>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C1694F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#C1694F&quot;,&quot;#D4A843&quot;,&quot;#B5573F&quot;]}}">
+class Component extends DCLogic {
+  state = { faqOpen: null, modalOpen: false, submitted: false, formName: "", formEmail: "", formPhone: "", formSituation: "" };
+
+  faqData = [
+    { q: "Do I actually need life insurance?", a: "If anyone depends on your income — a spouse, children, a parent, a business partner — then yes, it's worth having a conversation about protection. Life insurance replaces the income and financial support you provide so your family isn't left struggling." },
+    { q: "How much does life insurance cost?", a: "It depends on your age, health, coverage amount, and the type of policy. But most people are surprised at how affordable it can be. The best way to know is to get a personalized look at what's available — that's exactly what the free consultation is for. One thing that is true across the board: the younger and healthier you are when you apply, the more affordable your options tend to be." },
+    { q: "Can I qualify if I have health issues?", a: "Many people with health conditions still qualify for coverage. Every carrier evaluates risk differently, and because I work with multiple carriers, I can help you explore which options may be available based on your specific situation." },
+    { q: "What are living benefits?", a: "Living benefits allow you to access a portion of your death benefit while you're still alive if you're diagnosed with a qualifying terminal, critical, or chronic illness. It's one of the most important and least-known features of modern life insurance." },
+    { q: "What's the difference between term and whole life insurance?", a: "Term life covers you for a specific period (10, 20, or 30 years) and is typically the most affordable option. Whole life provides permanent coverage that lasts your entire life and includes a cash value component. The right choice depends on your situation, goals, and budget — and that's something we can walk through together." },
+    { q: "How long does the process take?", a: "The consultation itself takes about 15–20 minutes. If you decide to move forward, many applications can be completed the same day, and some carriers offer approval decisions in as little as 10–15 minutes. You're never locked in — coverage only starts if and when you say so." },
+    { q: "Do I have to buy anything during the consultation?", a: "No. The consultation is free and there's zero obligation. It's simply a conversation about your situation and the options available to you. If coverage makes sense, great. If not, you'll still walk away with a clearer understanding of where you stand." },
+    { q: "What states do you serve?", a: "I work with families across the United States. [Placeholder — Luis to confirm exact licensing footprint before launch.]" }
+  ];
+
+  namesData = [
+    { name: "Anthony G.", state: "NM" }, { name: "Shanita A.", state: "NJ" },
+    { name: "Sairy R.", state: "NV" }, { name: "Sylvia V.", state: "AZ" },
+    { name: "Rosio G.", state: "GA" }, { name: "Nancy H.", state: "AZ" },
+    { name: "Maria L.", state: "TX" }, { name: "Daniel R.", state: "CA" },
+    { name: "Jasmine T.", state: "FL" }, { name: "Roberto M.", state: "IL" },
+    { name: "Priscilla W.", state: "GA" }, { name: "Kevin S.", state: "NY" },
+    { name: "Andrea C.", state: "AZ" }, { name: "Marcus J.", state: "TX" },
+    { name: "Yesenia P.", state: "CA" }, { name: "David H.", state: "NV" }
+  ];
+
+  testimonialData = [
+    { name: "Anthony Gallegos", state: "NM", img: "uploads/6%20Clients%20testimonial%20vid.%20thumbnail/thumbnail.jpg" },
+    { name: "Shanita Amankwah", state: "NJ", img: "uploads/6%20Clients%20testimonial%20vid.%20thumbnail/thumbnail%20(1).jpg" },
+    { name: "Sairy Rodriguez", state: "NV", img: "uploads/6%20Clients%20testimonial%20vid.%20thumbnail/thumbnail%20(2).jpg" },
+    { name: "Sylvia Valdez", state: "AZ", img: "uploads/6%20Clients%20testimonial%20vid.%20thumbnail/thumbnail%20(3).jpg" },
+    { name: "Rosio Gutierrez", state: "GA", img: "uploads/6%20Clients%20testimonial%20vid.%20thumbnail/thumbnail%20(4).jpg" },
+    { name: "Nancy Hendricks", state: "AZ", img: "uploads/6%20Clients%20testimonial%20vid.%20thumbnail/thumbnail%20(5).jpg" }
+  ];
+
+  carrierData = [
+    { name: "Lincoln Financial", img: "uploads/Carrier%20logos/Lincoln_Financial_Logo_1.png" },
+    { name: "MassMutual", img: "uploads/Carrier%20logos/MassMutual_idFMdtMta6_1.png" },
+    { name: "Northwestern Mutual", img: "uploads/Carrier%20logos/Northwestern_Mutual_idBOaJwKGj_1.png" },
+    { name: "New York Life", img: "uploads/Carrier%20logos/idJaw2KHes_1786897439286.jpeg" },
+    { name: "MetLife", img: "uploads/Carrier%20logos/MetLife_idh2BQgzm7_1.png" }
+  ];
+
+  toggleFaq(i) {
+    this.setState(s => ({ faqOpen: s.faqOpen === i ? null : i }));
+  }
+
+  openModal() {
+    this.setState({ modalOpen: true, submitted: false, formName: "", formEmail: "", formPhone: "", formSituation: "" });
+  }
+
+  closeModal() {
+    this.setState({ modalOpen: false });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (!e.target.checkValidity()) {
+      e.target.reportValidity();
+      return;
+    }
+    this.setState({ submitted: true });
+  }
+
+  renderVals() {
+    const accentColor = this.props.accentColor ?? "#C1694F";
+    const faqs = this.faqData.map((f, i) => ({
+      ...f,
+      isOpen: this.state.faqOpen === i,
+      toggleLabel: this.state.faqOpen === i ? "–" : "+",
+      onToggle: () => this.toggleFaq(i)
+    }));
+    return {
+      accentColor,
+      faqs,
+      namesLoop: this.namesData.concat(this.namesData),
+      testimonials: this.testimonialData,
+      carriers: this.carrierData,
+      modalOpen: this.state.modalOpen,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      formName: this.state.formName,
+      formEmail: this.state.formEmail,
+      formPhone: this.state.formPhone,
+      formSituation: this.state.formSituation,
+      openModal: () => this.openModal(),
+      closeModal: () => this.closeModal(),
+      stopClick: e => e.stopPropagation(),
+      onSubmit: e => this.handleSubmit(e),
+      onNameChange: e => this.setState({ formName: e.target.value }),
+      onEmailChange: e => this.setState({ formEmail: e.target.value }),
+      onPhoneChange: e => this.setState({ formPhone: e.target.value }),
+      onSituationChange: e => this.setState({ formSituation: e.target.value })
+    };
+  }
+}
+</script>
+</body>
+</html>
